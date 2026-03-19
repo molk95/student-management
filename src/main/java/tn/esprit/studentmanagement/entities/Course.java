@@ -20,9 +20,8 @@ public class Course {
     private int credit;            // nombre de crédits
     private String description;
 
-    @ToString.Exclude
-    @JsonIgnore
     @OneToMany(mappedBy = "course")
+    @JsonManagedReference("course-enrollments")
     private List<Enrollment> enrollments;
 
 }
