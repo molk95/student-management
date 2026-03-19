@@ -20,8 +20,12 @@ public class Course {
     private int credit;            // nombre de crédits
     private String description;
 
-    @OneToMany(mappedBy = "course")
-    @JsonManagedReference("course-enrollments")
+    @ManyToOne
+    @JsonBackReference("department-students")
+    private Department department;
+    
+    @OneToMany(mappedBy = "student")
+    @JsonManagedReference("student-enrollments")
     private List<Enrollment> enrollments;
 
 }
