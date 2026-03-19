@@ -20,9 +20,13 @@ public class Enrollment {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @ToString.Exclude
+    @JsonIgnore
     @ManyToOne
     private Student student;
 
+    @ToString.Exclude
+    @JsonIgnore
     @ManyToOne
     private Course course;
 
