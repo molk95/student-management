@@ -20,8 +20,7 @@ public class Department {
     private String phone;
     private String head; // chef de département
 
-    @ToString.Exclude
-    @JsonIgnore
     @OneToMany(mappedBy = "department")
+    @JsonManagedReference
     private List<Student> students;
 }
