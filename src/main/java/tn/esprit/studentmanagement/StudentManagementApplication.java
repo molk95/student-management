@@ -1,4 +1,5 @@
-package tn.esprit.studentmanagement;
+package tn.esprit.studentmanagement.*;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
