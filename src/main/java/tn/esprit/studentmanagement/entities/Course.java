@@ -1,5 +1,5 @@
 package tn.esprit.studentmanagement.entities;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -21,8 +21,9 @@ public class Course {
     private int credit;            // nombre de crédits
     private String description;
 
-   @OneToMany(mappedBy = "course")
-    @JsonManagedReference("course-enrollments")
+    @ToString.Exclude
+    @JsonIgnore
+    @OneToMany(mappedBy = "course")
     private List<Enrollment> enrollments;
 
 }
