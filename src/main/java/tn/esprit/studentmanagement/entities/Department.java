@@ -21,6 +21,6 @@ public class Department {
     private String head; // chef de département
 
     @OneToMany(mappedBy = "department")
-    @JsonManagedReference
+    @JsonManagedReference("department-students")
     private List<Student> students;
 }
