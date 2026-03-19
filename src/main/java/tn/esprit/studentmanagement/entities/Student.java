@@ -1,6 +1,6 @@
 package tn.esprit.studentmanagement.entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -27,11 +27,13 @@ public class Student {
     private LocalDate dateOfBirth;
     private String address;
 
+    @ToString.Exclude
     @ManyToOne
-    @JsonBackReference("department-students")
+    @JoinColumn(name = "department_id_department")
     private Department department;
     
+    @ToString.Exclude
+    @JsonIgnore
     @OneToMany(mappedBy = "student")
-    @JsonManagedReference("student-enrollments")
     private List<Enrollment> enrollments;
 }
