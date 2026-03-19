@@ -24,13 +24,11 @@ public class Student {
     private LocalDate dateOfBirth;
     private String address;
 
-    @ToString.Exclude
-    @JsonIgnore
     @ManyToOne
+    @JsonBackReference
     private Department department;
 
-    @ToString.Exclude
-    @JsonIgnore
     @OneToMany(mappedBy = "student")
+    @JsonManagedReference
     private List<Enrollment> enrollments;
 }
