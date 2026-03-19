@@ -22,14 +22,15 @@ public class Enrollment {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @ToString.Exclude
     @ManyToOne
-    @JsonBackReference("student-enrollments")
+    @JoinColumn(name = "student_id_student")
     private Student student;
-
+    
+    @ToString.Exclude
     @ManyToOne
-    @JsonBackReference("course-enrollments")
+    @JoinColumn(name = "course_id_course")
     private Course course;
-
 
 
 
