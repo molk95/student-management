@@ -1,5 +1,4 @@
 package tn.esprit.studentmanagement.entities;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
