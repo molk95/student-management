@@ -25,10 +25,10 @@ public class Student {
     private String address;
 
     @ManyToOne
-    @JsonBackReference
+    @JsonBackReference("department-students")
     private Department department;
-
+    
     @OneToMany(mappedBy = "student")
-    @JsonManagedReference
+    @JsonManagedReference("student-enrollments")
     private List<Enrollment> enrollments;
 }
