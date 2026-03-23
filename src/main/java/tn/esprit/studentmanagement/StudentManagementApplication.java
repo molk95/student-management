@@ -1,4 +1,4 @@
-package tn.esprit.studentmanagement.*;
+package tn.esprit.studentmanagement;
 
 
 import org.springframework.boot.SpringApplication;
