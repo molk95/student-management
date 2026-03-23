@@ -19,9 +19,6 @@ public class DepartmentController {
     @GetMapping("/getAllDepartment")
     public List<Department> getAllDepartment() { return departmentService.getAllDepartments(); }
 
-    @GetMapping("/message")
-    public void getMessage() { return "this is a new message"; }
-
     @GetMapping("/getDepartment/{id}")
     public Department getDepartment(@PathVariable Long id) { return departmentService.getDepartmentById(id); }
 
